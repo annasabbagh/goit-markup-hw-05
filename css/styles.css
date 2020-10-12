@@ -148,10 +148,7 @@ img {
     position: absolute;
     display: block;
     content: "";
-    /*верхний марджин увеличила на 2,5 пикселя тк был 
-    зазор между Героем, но не уверенна, что это 
-    правильный способ*/
-    margin-top: 30.5px;
+    bottom: -1px;
     width: 100%;
     height: 4px;
     border-radius: 2px;
@@ -169,13 +166,13 @@ img {
     letter-spacing: 0.02em;
     color: var(--title-color);
     display:block;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-mail-tel-link-icon{
     margin-right: 10px;
     fill: var(--description-color);
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navigation-list-link.link {
@@ -201,7 +198,7 @@ img {
     line-height: 1.142;
     letter-spacing: 0.02em;
     color: var(--description-color);
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navigation-list-link:hover,
@@ -486,13 +483,13 @@ img {
 }
 
 .our-clients-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 1px solid var(--icons-color);
     width: 170px;
     height: 90px;
     border-radius: 4px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -502,15 +499,12 @@ img {
 }
 
 .our-clients-icon{
-    fill: var(--icons-color)
-}
-
-svg{
+    fill: var(--icons-color);
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.our-clients-link:hover svg,
-.our-clients-link:focus svg{
+.our-clients-link:hover .our-clients-icon,
+.our-clients-link:focus .our-clients-icon{
     fill: var(--accent-color);
 }
 /* ====== END-OUR-CLIENTS ====== */
@@ -519,12 +513,11 @@ svg{
 /* ====== FOOTER ====== */
 .footer{
     background-color: #2F303A; 
-    padding-top: 60px;
-    padding-bottom: 60px;
 }
 
 .footer-container{
-    display: inline-flex;
+    display: flex;
+    padding: 60px 15px;
 }
 
 .footer-address-container{
